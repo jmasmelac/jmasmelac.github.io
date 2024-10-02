@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSwEPBWZGG5G88xpmKAjc7Cn7x9sd6ByHRw4tJsJxiAXic1g9EJ50ZK3y4SVckWDQ0HSadaNbT6kNN0/pubhtml';
 
     fetch(sheetURL)
-        .then(response => response.text())
+        .then(response => response.text()) // Obtener los datos como texto
         .then(data => {
-            // Parsear la respuesta HTML para extraer los datos
+            // Parsear el HTML
             const parser = new DOMParser();
             const doc = parser.parseFromString(data, 'text/html');
             const rows = doc.querySelectorAll('table tbody tr');
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         titulo: cells[0].innerText,
                         descripcion: cells[1].innerText,
                         repositorio: cells[2].innerText,
-                        imagenes: cells[3].innerText.split(','), // Si las imágenes están separadas por comas
+                        imagenes: cells[3].innerText.split(','), // Imágenes separadas por comas
                         enfoque: cells[4].innerText
                     });
                 }
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 projectElement.innerHTML = `
                     <h3>${project.titulo}</h3>
                     <p>${project.descripcion}</p>
-                    <a href="${project.repositorio}">Repositorio</a>
+                    <a href="${project.repositorio}" target="_blank">Repositorio</a>
                     <div>${project.imagenes.map(img => `<img src="${img.trim()}" alt="${project.titulo}" />`).join('')}</div>
                     <p><strong>Enfoque:</strong> ${project.enfoque}</p>
                 `;
@@ -41,4 +41,5 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Error al cargar los datos:', error));
 });
+
 
