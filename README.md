@@ -3,4 +3,4 @@
 
 ## About Me
 
-esta pagina web funcionara a modo de blog de mis proyectos y otras cositas 
+esta pagina web va a funcionar como mi portafolio, para ello toma los datos de otro lugar con la finalidad de que sea mas fácil de editar y postergar con los nuevos proyectos que se hagan a futuro.
