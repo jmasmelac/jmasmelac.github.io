@@ -1,28 +1,35 @@
-const sheetURL = 'https://docs.google.com/spreadsheets/d/1rt6M2VdhDCsNOuzkIKLrVve2vT9-4eBBMivNtwZiea8/export?format=csv';
+const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSwEPBWZGG5G88xpmKAjc7Cn7x9sd6ByHRw4tJsJxiAXic1g9EJ50ZK3y4SVckWDQ0HSadaNbT6kNN0/export?format=csv';
 
-// Función para cargar y parsear el CSV
 fetch(sheetURL)
     .then(response => response.text())
     .then(csvData => {
-        // Usar Papa Parse para convertir CSV a JSON
-        const parsedData = Papa.parse(csvData, {
-            header: true,   // Usar la primera fila como encabezado
-            skipEmptyLines: true,  // Saltar las líneas vacías
-        });
+        Papa.parse(csvData, {
+            header: true, // Para que las columnas se lean como nombres de campos
+            skipEmptyLines: true, // Para evitar líneas vacías
+            complete: function(results) {
+                console.log('Datos parseados:', results.data);
+                const projects = results.data;
+                const projectsContainer = document.getElementById('projects');
+                
+                // Limpiar contenido anterior
+                projectsContainer.innerHTML = '';
 
-        const projects = parsedData.data;
-        console.log(projects); // Ver los proyectos en la consola para verificar
+                // Mostrar los proyectos
+                projects.forEach(project => {
+                    // Manejar las imágenes separadas por comas
+                    const images = project['imagenes'].split(',').map(imageUrl => `<img src="${imageUrl.trim()}" alt="Imagen del proyecto" />`).join('');
 
-        // Mostrar los proyectos en la página web
-        const projectsContainer = document.getElementById('projects');
-        projects.forEach(project => {
-            const projectElement = document.createElement('div');
-            projectElement.innerHTML = `
-                <h3>${project['Nombre del Proyecto']}</h3>
-                <p>${project['Descripción']}</p>
-                <a href="${project['Enlace al Repositorio']}" target="_blank">Ver en GitHub</a>
-            `;
-            projectsContainer.appendChild(projectElement);
+                    const projectElement = document.createElement('div');
+                    projectElement.innerHTML = `
+                        <h3>${project['titulo']}</h3>
+                        <p>${project['descripción']}</p>
+                        <a href="${project['repositorio']}" target="_blank">Ver en GitHub</a>
+                        <div>${images}</div>
+                        <p><strong>Enfoque:</strong> ${project['enfoque']}</p>
+                    `;
+                    projectsContainer.appendChild(projectElement);
+                });
+            }
         });
     })
     .catch(error => console.error('Error al cargar el CSV:', error));
