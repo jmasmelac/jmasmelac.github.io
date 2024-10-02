@@ -1,0 +1,36 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Estilos para los proyectos */
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#projects div {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    width: calc(33% - 40px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#projects h3 {
+    margin-top: 0;
+}
+
+#projects a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#projects a:hover {
+    text-decoration: underline;
+}
