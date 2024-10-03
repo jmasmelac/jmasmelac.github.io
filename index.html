@@ -2,15 +2,81 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Juan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <title>Portafolio - Juan Masmelac</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Mi portafolio</h1>
-    <div id="projects"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-    <script src="script.js"></script>
+    <!-- Encabezado -->
+    <header>
+        <div class="header-content">
+            <h1>Juan Masmela</h1>
+            <h2>Ingeniero Electrónico, desarrollador de software y Analista de Datos</h2>
+        </div>
+        <nav id="navbar">
+            <a href="#about">Acerca de</a>
+            <a href="#technologies">Tecnologías</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#" id="language-btn">Idioma</a>
+        </nav>
+    </header>
+
+        <!-- Barra lateral -->
+        <div class="sidebar">
+            <a href="https://www.linkedin.com/in/jmasmelac" target="_blank">
+                <img src="https://cdn.iconscout.com/icon/free/png-512/free-linkedin-logo-icon-download-in-svg-png-gif-file-formats--social-media-pack-logos-icons-83438.png?f=webp&w=256" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/jmasmelac" target="_blank">
+                <img src="https://cdn.iconscout.com/icon/free/png-512/free-github-logo-icon-download-in-svg-png-gif-file-formats--social-media-pack-logos-icons-761603.png?f=webp&w=256" alt="GitHub">
+            </a>
+        </div>
+
+    <!-- Sección Acerca de mí -->
+    <section id="about" class="section">
+        <h2>Acerca de mí</h2>
+        <p>Soy ingeniero electrónico con pasión por el análisis de datos y desarrollo de software. Me especializo en proyectos de hardware y en la aplicación de técnicas avanzadas de análisis de datos.</p>
+    </section>
+
+    <!-- Sección Tecnologías -->
+    <section id="technologies" class="section">
+        <h2>Tecnologías</h2>
+        <ul>
+            <li>Python (Análisis de datos, Machine Learning)</li>
+            <li>Arduino / PlatformIO / Arduino IDE</li>
+            <li>STM32 / STM Cube IDE</li>
+            <li>Git y GitHub</li>
+        </ul>
+    </section>
+
+    <!-- Sección Proyectos (Aquí cargaremos los datos externamente) -->
+    <section id="projects" class="section">
+        <h2>Proyectos</h2>
+        <div id="projects-container">
+            <!-- Aquí se cargará la información de los proyectos desde Google Sheets -->
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>Contacto: <a href="mailto:tuemail@example.com">tuemail@example.com</a></p>
+        <p>LinkedIn: <a href="mailto:tuemail@example.com">tuemail@example.com</a></p>
+    </footer>
+
+    <!-- Agregamos un script para manejar la transición suave -->
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetSection = document.querySelector(this.getAttribute('href'));
+                window.scrollTo({
+                    top: targetSection.offsetTop - document.querySelector('nav').offsetHeight,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
+
