@@ -119,7 +119,7 @@ ul li {
 /* Barra lateral */
 .sidebar {
     position: fixed;
-    top: 50%;
+    top: 65%;
     left: 0;
     transform: translateY(-50%);
     display: flex;
