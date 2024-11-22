@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSwEPBWZGG5G88xpmKAjc7Cn7x9sd6ByHRw4tJsJxiAXic1g9EJ50ZK3y4SVckWDQ0HSadaNbT6kNN0/pubhtml';
+    const sheetURL = 'https://sheets.googleapis.com/v4/spreadsheets/1rt6M2VdhDCsNOuzkIKLrVve2vT9-4eBBMivNtwZiea8/values/Hoja%201?key=AIzaSyAzAR4zmdDxnp3QFTr0KVt0TwBwv7DHMHw';
 
     fetch(sheetURL)
         .then(response => response.text()) // Obtener los datos como texto
