@@ -52,6 +52,17 @@
     <!-- Sección Proyectos (Aquí cargaremos los datos externamente) -->
     <section id="projects" class="section">
         <h2>Proyectos</h2>
+
+            <!-- Div para el filtro -->
+        <div id="filter-container">
+            <label for="project-filter">Filtrar por enfoque:</label>
+            <select id="project-filter">
+                <option value="Todos">Todos</option>
+                <option value="Programación">Programación</option>
+                <option value="Electrónica">Electrónica</option>
+            </select>
+        </div>
+
         <div id="projects-container">
             <!-- Aquí se cargará la información de los proyectos desde Google Sheets -->
         </div>

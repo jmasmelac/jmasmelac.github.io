@@ -1,59 +1,71 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // URL de la API de Google Sheets
     const sheetURL = 'https://sheets.googleapis.com/v4/spreadsheets/1rt6M2VdhDCsNOuzkIKLrVve2vT9-4eBBMivNtwZiea8/values/Hoja%201?key=AIzaSyAzAR4zmdDxnp3QFTr0KVt0TwBwv7DHMHw';
+    const projectContainer = document.getElementById('projects-container');
+    const filterSelect = document.getElementById('project-filter');
 
-    // Función principal para cargar y mostrar los datos
+    let allProjects = []; // Variable para almacenar todos los proyectos
+
+    // Cargar y mostrar proyectos desde Google Sheets
     fetch(sheetURL)
         .then(response => {
-            // Verifica si la respuesta es válida
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
             return response.json();
         })
         .then(data => {
-            // Debug: Imprimir el JSON en la consola
-            console.log('Datos JSON cargados:', data);
-
-            // Verificar si hay filas en los datos
             const rows = data.values;
             if (!rows || rows.length < 2) {
                 console.error('No se encontraron datos en la hoja.');
                 return;
             }
 
-            // Limpiar y obtener el contenedor de proyectos
-            const projectContainer = document.getElementById('projects-container');
-            projectContainer.innerHTML = ''; // Limpia el contenedor para evitar duplicados
+            // Procesar los datos y guardarlos en `allProjects`
+            allProjects = rows.slice(1).map(row => ({
+                titulo: row[0],
+                descripcion: row[1],
+                repositorio: row[2],
+                imagenes: row[3]?.split(','),
+                enfoque: row[4]
+            }));
 
-            // Iterar sobre las filas de datos (omitimos la primera fila: encabezados)
-            rows.slice(1).forEach(row => {
-                console.log('Procesando fila:', row); // Debug para verificar cada fila
-
-                // Crear el elemento HTML para el proyecto
-                const projectElement = document.createElement('div');
-                projectElement.className = 'project';
-                projectElement.innerHTML = `
-                    <h3>${row[0]}</h3> <!-- Título -->
-                    <p>${row[1]}</p> <!-- Descripción -->
-                    <a href="${row[2]}" target="_blank">Repositorio</a> <!-- Repositorio -->
-                    <div class="images">
-                        ${row[3]?.split(',')
-                            .map(img => `<img src="${img.trim()}" alt="${row[0]}" />`)
-                            .join('')} <!-- Imágenes -->
-                    </div>
-                    <p><strong>Enfoque:</strong> ${row[4]}</p> <!-- Enfoque -->
-                `;
-
-                // Agregar el proyecto al contenedor
-                projectContainer.appendChild(projectElement);
-            });
+            // Mostrar todos los proyectos al inicio
+            renderProjects(allProjects);
         })
-        .catch(error => {
-            // Manejo de errores
-            console.error('Error al cargar los datos:', error);
+        .catch(error => console.error('Error al cargar los datos:', error));
+
+    // Función para mostrar los proyectos
+    function renderProjects(projects) {
+        projectContainer.innerHTML = ''; // Limpiar el contenedor
+        projects.forEach(project => {
+            const projectElement = document.createElement('div');
+            projectElement.className = 'project';
+            projectElement.innerHTML = `
+                <h3>${project.titulo}</h3>
+                <p>${project.descripcion}</p>
+                <a href="${project.repositorio}" target="_blank">Repositorio</a>
+                <div class="images">
+                    ${project.imagenes
+                        ?.map(img => `<img src="${img.trim()}" alt="${project.titulo}" />`)
+                        .join('')}
+                </div>
+                <p><strong>Enfoque:</strong> ${project.enfoque}</p>
+            `;
+            projectContainer.appendChild(projectElement);
         });
+    }
+
+    // Filtrar proyectos según el enfoque seleccionado
+    filterSelect.addEventListener('change', () => {
+        const selectedEnfoque = filterSelect.value;
+        const filteredProjects =
+            selectedEnfoque === 'Todos'
+                ? allProjects
+                : allProjects.filter(project => project.enfoque === selectedEnfoque);
+        renderProjects(filteredProjects);
+    });
 });
+
 
 
 

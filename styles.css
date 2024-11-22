@@ -112,8 +112,74 @@ ul li {
 /* Proyectos */
 #projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    padding: 2rem;
+}
+
+/* Estilos para cada proyecto */
+.project {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para el título del proyecto */
+.project h3 {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+/* Estilos para la descripción */
+.project p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Estilos para el enlace del repositorio */
+.project a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para las imágenes */
+.project .images img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+/*filter-container*/
+#filter-container {
+    margin: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#project-filter {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
 /* Barra lateral */
