@@ -66,6 +66,52 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Selecciona todos los enlaces del nav que apunten a un ID
+function smoothScroll(targetPosition) {
+    const startPosition = window.pageYOffset; // Posición inicial
+    const distance = targetPosition - startPosition; // Distancia a recorrer
+    const duration = 1200; // Duración del scroll en milisegundos (ajustada a 1.2s)
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = ease(timeElapsed, startPosition, distance, duration);
+
+        window.scrollTo(0, run);
+
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function ease(t, b, c, d) { // Función de suavizado (easeInOutQuad)
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+}
+
+// Escucha los clics en los enlaces del nav
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href'); // Obtiene el ID del destino
+        const targetElement = document.querySelector(targetId); // Selecciona el destino
+
+        if (targetElement) {
+            const headerHeight = document.querySelector('header').offsetHeight; // Altura del encabezado
+            const marginOffset = 10; // Margen adicional
+            const targetPosition = targetElement.offsetTop - headerHeight - marginOffset;
+
+            smoothScroll(targetPosition); // Llama a la función de scroll suave
+        }
+    });
+});
+
+
 
 
 

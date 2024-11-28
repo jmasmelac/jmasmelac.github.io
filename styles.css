@@ -10,6 +10,8 @@
 /* Configuración base del documento */
 html {
     font-size: 62.5%; /* Establece la base para que 1rem = 10px */
+    scroll-padding-top: 48rem; /* Ajusta este valor a la altura de tu encabezado */
+
 }
 
 body {
@@ -106,37 +108,166 @@ header {
 }
 
 
-
-
-/* Secciones */
-.section {
-    padding: 3rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+/* //////////////////////////////////////////////////////////////Barra lateral */
+.sidebar {
+    position: fixed; /* Fija la barra en la pantalla */
+    top: 75%; /* Mueve la barra a 3/4 partes de la pantalla */
+    right: 0; /* La coloca al lado derecho */
+    transform: translateY(-50%); /* Ajusta la posición para centrado vertical relativo */
+    display: flex; /* Permite organizar los íconos */
+    flex-direction: column; /* Ordena los elementos verticalmente */
+    background-color: #4CAF50; /* Color de fondo */
+    padding: 0.5rem; /* Espaciado interno más reducido */
+    border-radius: 10px 0 0 10px; /* Bordes redondeados hacia la izquierda */
+    width: 4rem; /* Reduce el ancho de la barra */
+    z-index: 999; /* Asegura que esté por encima del contenido */
 }
 
-.section h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: #4CAF50;
-    margin-bottom: 2rem;
+/* Espaciado entre los íconos */
+.sidebar a {
+    margin: 0.3rem 0; /* Reduce la separación vertical entre los enlaces */
 }
 
-/* Listas */
-ul {
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+/* Estilos de los íconos */
+.sidebar img {
+    width: 30px; /* Tamaño reducido para los íconos */
+    height: 30px; /* Asegura un tamaño uniforme y compacto */
+    border-radius: 50%; /* Mantiene los íconos circulares */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Suaviza los efectos de hover */
 }
 
-ul li {
-    background-color: #e8f5e9;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-weight: 600;
+/* Efectos de hover para los íconos */
+.sidebar img:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño en hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo claro al pasar el cursor */
 }
+
+
+
+/* ////////////////////////////////////////////////////////////////"Acerca de mí" */
+#about {
+    background-color: #f9f9f9; /* Fondo suave */
+    padding: 3rem 1.5rem; /* Espaciado interno amplio */
+    margin-top: 8rem; /* Asegura que no sea tapado por el encabezado */
+    text-align: left; /* Alinea el texto a la izquierda */
+    border-left: 5px solid #4CAF50; /* Línea decorativa a la izquierda */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+/* Título */
+#about h2 {
+    font-size: 2.5rem; /* Título más grande */
+    color: #4CAF50; /* Verde llamativo */
+    margin-bottom: 2rem; /* Separación del texto */
+    border-bottom: 2px solid #4CAF50; /* Subrayado decorativo */
+    padding-bottom: 0.5rem;
+}
+
+/* Sección "Acerca de mí" */
+#about {
+    background-color: #ffffff; /* Fondo claro y limpio */
+    padding: 3rem 1.5rem; /* Espaciado interno suficiente */
+    margin-top: 8rem; /* Separación desde el encabezado */
+    text-align: left; /* Alinea el texto a la izquierda */
+    border-left: 5px solid #4CAF50; /* Línea decorativa a la izquierda */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra ligera para destacar la sección */
+}
+
+/* Título */
+#about h2 {
+    font-size: 2.5rem; /* Aumenta el tamaño del título */
+    color: #4CAF50; /* Verde llamativo */
+    margin-bottom: 2rem; /* Espaciado entre el título y el contenido */
+    border-bottom: 2px solid #4CAF50; /* Subrayado decorativo */
+    padding-bottom: 0.5rem; /* Espaciado para el subrayado */
+}
+
+/* Texto */
+#about p {
+    font-size: 1.6rem; /* Tamaño del texto cómodo */
+    line-height: 1.8; /* Espaciado entre líneas */
+    color: #333; /* Color oscuro para mejor contraste */
+    margin-bottom: 1.5rem; /* Espaciado entre párrafos */
+}
+
+/* Listas (si se utilizan) */
+#about ul {
+    list-style-type: disc; /* Viñetas estándar */
+    margin-left: 2rem; /* Separación del contenido principal */
+    color: #333; /* Color oscuro */
+}
+
+#about ul li {
+    margin-bottom: 1rem; /* Espaciado entre elementos de la lista */
+    font-size: 1.6rem; /* Alineado con el texto */
+}
+
+/* Negritas dentro del texto */
+#about p strong {
+    color: #333; /* Color oscuro */
+    font-weight: bold; /* Destaca el texto */
+}
+
+
+
+
+/* ///////////////////////////////////////////////////////////////////Tecnologías */
+/* Sección "Tecnologías" */
+#technologies {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 3rem 1.5rem; /* Espaciado interno */
+    text-align: center; /* Centra todo el contenido */
+    border-left: 5px solid #4CAF50; /* Barra decorativa en el lado izquierdo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra ligera para destacar */
+}
+
+/* Título principal */
+#technologies h2 {
+    font-size: 2.5rem; /* Tamaño del título */
+    color: #4CAF50; /* Verde llamativo */
+    margin-bottom: 2rem; /* Espaciado con el contenido */
+    border-bottom: 2px solid #4CAF50; /* Línea decorativa */
+    padding-bottom: 0.5rem; /* Espaciado para el subrayado */
+}
+
+
+/* Categorías */
+.tech-category {
+    margin-bottom: 3rem; /* Espaciado entre categorías */
+}
+
+.tech-category h3 {
+    font-size: 2rem; /* Tamaño del subtítulo */
+    color: #333; /* Color oscuro */
+    margin-bottom: 1rem; /* Espaciado con las badges */
+    text-align: left; /* Alinea el título de las categorías a la izquierda */
+}
+
+/* Badges */
+.tech-badges {
+    display: flex; /* Diseño en fila */
+    flex-wrap: wrap; /* Permite que las badges se envuelvan en líneas nuevas */
+    justify-content: center; /* Centra las badges horizontalmente */
+    gap: 1rem; /* Espaciado entre badges */
+}
+
+.tech-badges img {
+    height: auto; /* Ajusta automáticamente el alto */
+    max-width: 100%; /* Asegura que no se desborden */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto suave */
+}
+
+/* Efecto en hover */
+.tech-badges img:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra al pasar el cursor */
+}
+
+
+
+
+
 
 /* Proyectos */
 #projects-container {
@@ -211,30 +342,7 @@ ul li {
     font-size: 1rem;
 }
 
-/* Barra lateral */
-.sidebar {
-    position: fixed;
-    top: 65%;
-    left: 0;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    background-color: #4CAF50;
-    padding: 1rem;
-    border-radius: 0 10px 10px 0;
-    z-index: 999;
-}
 
-.sidebar a {
-    margin: 0.5rem 0;
-}
-
-.sidebar img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
-}
 
 .sidebar img:hover {
     transform: scale(1.1);
