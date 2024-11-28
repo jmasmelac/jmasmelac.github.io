@@ -24,13 +24,13 @@ body {
 }
 
 
-/* ////////////////////////////////////////////////////////Encabezado */
+/* ////////////////////////////////////////////////////////////Encabezado */
 
 /* Estilos generales del encabezado */
 header {
     background-color: #4CAF50; /* Color de fondo principal */
     color: white; /* Color del texto en el encabezado */
-    padding: 1.5rem 2rem; /* Espaciado interno ajustado */
+    padding: 2rem 3rem; /* Espaciado interno ajustado */
     position: fixed; /* Fija el encabezado en la parte superior */
     top: 0; /* Posiciona el encabezado al borde superior */
     left: 0; /* Alinea el encabezado al borde izquierdo */
@@ -53,29 +53,29 @@ header {
 
 /* Estilo del título principal (h1) */
 header h1 {
-    font-size: 2rem; /* Tamaño de fuente principal equivalente a 20px */
-    margin-bottom: 0.5rem; /* Espaciado mayor para mejorar la separación */
+    font-size: 3rem; /* Tamaño del título principal (30px) */
+    margin-bottom: 1rem; /* Espaciado mayor para separar del subtítulo */
 }
 
 /* Estilo del subtítulo (h2) */
 header h2 {
-    font-size: 1.2rem; /* Tamaño de fuente más grande para mejorar la legibilidad */
+    font-size: 2rem; /* Tamaño del subtítulo (20px) */
     font-weight: 400; /* Peso de fuente más delgado */
     color: #e0e0e0; /* Color más claro para diferenciar del título */
     line-height: 1.4; /* Aumenta el espacio entre líneas para legibilidad */
 }
 
-/* /////////////////////////////////////////////////////////////////Navegación */
+/* //////////////////////////////////////////////////////////Navegación */
 nav {
     display: flex; /* Flexbox para alinear los enlaces */
-    gap: 1.2rem; /* Espaciado entre los enlaces */
+    gap: 2rem; /* Espaciado entre los enlaces */
 }
 
 nav a {
     color: white; /* Color de los enlaces */
     text-decoration: none; /* Elimina el subrayado */
-    font-size: 1.4rem; /* Tamaño de texto para buena visibilidad en móviles */
-    padding: 0.5rem 1rem; /* Espaciado interno en los enlaces */
+    font-size: 2rem; /* Tamaño de texto (20px) */
+    padding: 0.8rem 1.5rem; /* Espaciado interno en los enlaces */
     border-radius: 0.5rem; /* Bordes redondeados para los enlaces */
     transition: background-color 0.3s ease; /* Efecto de transición en el hover */
 }
@@ -89,6 +89,7 @@ nav a:focus {
     outline: 2px solid white; /* Resalta el enlace enfocado */
     outline-offset: 4px; /* Desplaza el contorno del texto */
 }
+
 
 /* Secciones */
 .section {
