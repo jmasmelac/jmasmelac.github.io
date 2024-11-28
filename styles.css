@@ -1,82 +1,93 @@
-/* Estilos generales */
+/* ////////////////////////////////////////////////////Estilos generales */
+
+/* Reset de estilos básicos */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box; /* Incluye bordes y padding dentro de las dimensiones totales */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el relleno predeterminado */
 }
 
-html, body {
-    width: 100%;
-    overflow-x: hidden;
+/* Configuración base del documento */
+html {
+    font-size: 62.5%; /* Establece la base para que 1rem = 10px */
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f9;
-    color: #333;
-    padding-top: 80px; /* Reducido para ajustarse al nuevo tamaño del encabezado */
+    font-family: 'Arial', sans-serif; /* Define la fuente principal */
+    font-size: 1.6rem; /* Tamaño de texto base equivalente a 16px */
+    line-height: 1.6; /* Espaciado entre líneas para mejorar la legibilidad */
+    background-color: #f4f4f9; /* Color de fondo suave para mejor contraste */
+    color: #333; /* Color de texto principal */
+    width: 100%; /* Asegura que el cuerpo ocupe todo el ancho disponible */
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    padding-top: 8rem; /* Espaciado superior para compensar el encabezado fijo */
 }
 
-/* Encabezado */
+
+/* ////////////////////////////////////////////////////////Encabezado */
+
+/* Estilos generales del encabezado */
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px; /* Reducido el padding vertical */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    background-color: #4CAF50; /* Color de fondo principal */
+    color: white; /* Color del texto en el encabezado */
+    padding: 1.5rem 2rem; /* Espaciado interno ajustado */
+    position: fixed; /* Fija el encabezado en la parte superior */
+    top: 0; /* Posiciona el encabezado al borde superior */
+    left: 0; /* Alinea el encabezado al borde izquierdo */
+    right: 0; /* Alinea el encabezado al borde derecho */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.08); /* Sombra suave para un efecto moderno */
+    width: 100%; /* El encabezado ocupa todo el ancho */
+    display: flex; /* Activa el modelo flexbox */
+    justify-content: space-between; /* Espacia los elementos horizontalmente */
+    align-items: center; /* Alinea verticalmente los elementos */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
 }
 
+/* Contenedor del contenido principal del encabezado */
 .header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: flex; /* Flexbox para alinear el contenido */
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    align-items: flex-start; /* Alinea los elementos al inicio */
 }
 
+/* Estilo del título principal (h1) */
 header h1 {
-    font-size: 1.8rem; /* Reducido el tamaño de fuente */
-    margin-bottom: 0.2rem;
+    font-size: 2rem; /* Tamaño de fuente principal equivalente a 20px */
+    margin-bottom: 0.5rem; /* Espaciado mayor para mejorar la separación */
 }
 
+/* Estilo del subtítulo (h2) */
 header h2 {
-    font-size: 0.9rem; /* Reducido el tamaño de fuente */
-    font-weight: 400;
-    color: #e0e0e0;
+    font-size: 1.2rem; /* Tamaño de fuente más grande para mejorar la legibilidad */
+    font-weight: 400; /* Peso de fuente más delgado */
+    color: #e0e0e0; /* Color más claro para diferenciar del título */
+    line-height: 1.4; /* Aumenta el espacio entre líneas para legibilidad */
 }
 
-/* Barra de navegación */
+/* /////////////////////////////////////////////////////////////////Navegación */
 nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-wrap: wrap;
+    display: flex; /* Flexbox para alinear los enlaces */
+    gap: 1.2rem; /* Espaciado entre los enlaces */
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0.3rem;
-    padding: 0.3rem 0.8rem;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    font-size: 0.9rem; /* Reducido el tamaño de fuente */
+    color: white; /* Color de los enlaces */
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 1.4rem; /* Tamaño de texto para buena visibilidad en móviles */
+    padding: 0.5rem 1rem; /* Espaciado interno en los enlaces */
+    border-radius: 0.5rem; /* Bordes redondeados para los enlaces */
+    transition: background-color 0.3s ease; /* Efecto de transición en el hover */
 }
 
 nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.2); /* Color de fondo en hover */
+}
+
+/* Mejora de accesibilidad: Resaltar al enfocar con teclado */
+nav a:focus {
+    outline: 2px solid white; /* Resalta el enlace enfocado */
+    outline-offset: 4px; /* Desplaza el contorno del texto */
 }
 
 /* Secciones */
