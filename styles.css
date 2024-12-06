@@ -156,7 +156,7 @@ header {
 
 /* Título */
 #about h2 {
-    font-size: 2.5rem; /* Título más grande */
+    font-size: 3rem; /* Título más grande */
     color: #4CAF50; /* Verde llamativo */
     margin-bottom: 2rem; /* Separación del texto */
     border-bottom: 2px solid #4CAF50; /* Subrayado decorativo */
@@ -165,12 +165,13 @@ header {
 
 /* Sección "Acerca de mí" */
 #about {
-    background-color: #ffffff; /* Fondo claro y limpio */
-    padding: 3rem 1.5rem; /* Espaciado interno suficiente */
+    background-color: #ffffff; /* Fondo claro */
+    padding: 3rem 1.5rem; /* Espaciado interno */
     margin-top: 8rem; /* Separación desde el encabezado */
+    margin-bottom: 4rem; /* Espaciado inferior hacia la sección de tecnologías */
     text-align: left; /* Alinea el texto a la izquierda */
     border-left: 5px solid #4CAF50; /* Línea decorativa a la izquierda */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra ligera para destacar la sección */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra ligera */
 }
 
 /* Título */
@@ -180,11 +181,12 @@ header {
     margin-bottom: 2rem; /* Espaciado entre el título y el contenido */
     border-bottom: 2px solid #4CAF50; /* Subrayado decorativo */
     padding-bottom: 0.5rem; /* Espaciado para el subrayado */
+    text-align: center; /* Centra todo el contenido */
 }
 
 /* Texto */
 #about p {
-    font-size: 1.6rem; /* Tamaño del texto cómodo */
+    font-size: 1.8rem; /* Tamaño del texto cómodo */
     line-height: 1.8; /* Espaciado entre líneas */
     color: #333; /* Color oscuro para mejor contraste */
     margin-bottom: 1.5rem; /* Espaciado entre párrafos */
@@ -214,16 +216,17 @@ header {
 /* ///////////////////////////////////////////////////////////////////Tecnologías */
 /* Sección "Tecnologías" */
 #technologies {
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #ffffff; /* Fondo claro */
     padding: 3rem 1.5rem; /* Espaciado interno */
     text-align: center; /* Centra todo el contenido */
-    border-left: 5px solid #4CAF50; /* Barra decorativa en el lado izquierdo */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra ligera para destacar */
+    border-left: 5px solid #4CAF50; /* Barra decorativa */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra ligera */
+    margin-top: 4rem; /* Espaciado superior hacia la sección de "Acerca de mí" */
 }
 
 /* Título principal */
 #technologies h2 {
-    font-size: 2.5rem; /* Tamaño del título */
+    font-size: 3rem; /* Tamaño del título */
     color: #4CAF50; /* Verde llamativo */
     margin-bottom: 2rem; /* Espaciado con el contenido */
     border-bottom: 2px solid #4CAF50; /* Línea decorativa */
@@ -244,117 +247,264 @@ header {
 }
 
 /* Badges */
+/* Contenedor de las badges */
 .tech-badges {
-    display: flex; /* Diseño en fila */
-    flex-wrap: wrap; /* Permite que las badges se envuelvan en líneas nuevas */
+    display: flex; /* Organiza las badges en fila */
+    flex-wrap: wrap; /* Permite que se ajusten en múltiples filas si es necesario */
     justify-content: center; /* Centra las badges horizontalmente */
-    gap: 1rem; /* Espaciado entre badges */
+    gap: 1.5rem; /* Incrementa el espaciado entre badges */
+    margin-top: 2rem; /* Espaciado superior con otras secciones */
 }
 
+/* Estilo para las imágenes de las badges */
 .tech-badges img {
-    height: auto; /* Ajusta automáticamente el alto */
-    max-width: 100%; /* Asegura que no se desborden */
-    border-radius: 10px; /* Bordes redondeados */
+    height: auto; /* Mantiene la proporción original */
+    max-width: 150px; /* Aumenta el tamaño máximo de las badges */
+    border-radius: 15px; /* Bordes redondeados */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto suave */
 }
 
-/* Efecto en hover */
+/* Efecto hover en las badges */
 .tech-badges img:hover {
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra al pasar el cursor */
+    transform: scale(1.15); /* Aumenta ligeramente el tamaño al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
 }
 
 
 
 
+/*////////////////////////////////////////////////////////// proyectos*/
 
 
-/* Proyectos */
-#projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
+#projects {
+    padding: 3rem 1.5rem; /* Espaciado interno */
+    background-color: #ffffff; /* Fondo blanco */
+    border-left: 5px solid #4CAF50; /* Barra decorativa */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra ligera */
+    margin-top: 2rem; /* Separación con la sección anterior */
 }
 
-/* Estilos para cada proyecto */
-.project {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    background-color: #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Título de la sección */
+#projects h2 {
+    font-size: 3rem; /* Tamaño grande */
+    color: #4CAF50; /* Verde llamativo */
+    margin-bottom: 2rem; /* Espaciado con el filtro */
+    text-align: center; /* Centra el título */
+    border-bottom: 2px solid #4CAF50; /* Subrayado decorativo */
+    padding-bottom: 0.5rem; /* Espaciado interno */
 }
 
-.project:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* Estilos para el título del proyecto */
-.project h3 {
-    font-size: 1.5rem;
-    color: #4CAF50;
-    margin-bottom: 1rem;
-}
-
-/* Estilos para la descripción */
-.project p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-/* Estilos para el enlace del repositorio */
-.project a {
-    display: inline-block;
-    margin-top: 1rem;
-    color: #007BFF;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.project a:hover {
-    text-decoration: underline;
-}
-
-/* Estilos para las imágenes */
-.project .images img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 1rem;
-    border-radius: 5px;
-}
-
-/*filter-container*/
 #filter-container {
-    margin: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Organiza los elementos en columna */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente dentro del contenedor */
+    margin: 2rem 0; /* Espaciado superior e inferior */
+    gap: 1rem; /* Espaciado entre el label y el selector */
 }
+
+#filter-container label {
+    font-size: 2rem; /* Tamaño del texto */
+    color: #4CAF50; /* Verde consistente con los títulos */
+    font-weight: bold; /* Resalta el texto */
+}
+
+
 
 #project-filter {
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
+    display: block; /* Asegura que esté centrado */
+    padding: 0.7rem 1.5rem; /* Ajusta el tamaño del selector */
+    border: 2px solid #4CAF50; /* Borde verde consistente */
+    border-radius: 2rem; /* Redondeo más pronunciado */
+    font-size: 1.4rem; /* Tamaño del texto */
+    font-weight: bold; /* Resalta el texto */
+    background-color: white; /* Fondo blanco */
+    color: #4CAF50; /* Texto verde */
+    text-align: center; /* Centra el texto */
+    cursor: pointer; /* Indica interactividad */
+    transition: all 0.3s ease; /* Transición suave */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    max-width: 300px; /* Ancho máximo */
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+/* Hover y Focus */
+#project-filter:hover {
+    background-color: #4CAF50; /* Fondo verde */
+    color: white; /* Texto blanco */
+    border-color: white; /* Borde blanco */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+}
+
+#project-filter:focus {
+    outline: none; /* Sin borde predeterminado */
+    box-shadow: 0 0 8px rgba(72, 239, 128, 0.6); /* Resalta el selector */
+}
+
+/* //////////////////////////////////////////////////////////////////Proyectos */
+
+/* Contenedor Principal de Proyectos */
+#projects-container {
+    display: grid; /* Diseño en cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajuste dinámico */
+    gap: 2rem; /* Espaciado entre tarjetas */
+    padding: 2rem; /* Espaciado interno */
+    background-color: #f9f9f9; /* Fondo claro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    margin-top: 2rem; /* Separación con la sección anterior */
+}
+
+/* Estilo de cada Tarjeta de Proyecto */
+.project {
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 1.5rem; /* Espaciado interno */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+/* Efecto Hover en la Tarjeta */
+.project:hover {
+    transform: translateY(-10px); /* Eleva ligeramente la tarjeta */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+}
+
+/* Estilo del Título del Proyecto */
+.project h3 {
+    font-size: 2.2rem; /* Tamaño destacado */
+    color: #4CAF50; /* Verde consistente */
+    margin-bottom: 1rem; /* Separación con el texto */
+    text-align: center; /* Centrado */
+}
+
+/* Estilo de la Descripción del Proyecto */
+.project p {
+    font-size: 1.8rem; /* Texto cómodo */
+    color: #555; /* Gris oscuro */
+    line-height: 1.6; /* Espaciado entre líneas */
+    margin-bottom: 1rem; /* Separación con la imagen */
+    text-align: left; /* Justifica el texto */
 }
 
 
+/* Botón de Enlace */
 
-.sidebar img:hover {
-    transform: scale(1.1);
+/* Botón estilo encabezado */
+.btn {
+    display: inline-block;
+    background-color: white;
+    color: #4CAF50;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #4CAF50;
+    border-radius: 25px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
 }
 
-/* Pie de página */
-footer {
+.btn:hover {
     background-color: #4CAF50;
     color: white;
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 4rem;
-    width: 100%;
+    border-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+
+/* Imagen dentro de la Tarjeta */
+
+/* Contenedor de las imágenes */
+.images {
+    display: flex; /* Organiza las imágenes en línea */
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias filas si es necesario */
+    gap: 1.5rem; /* Espaciado entre imágenes */
+    justify-content: center; /* Centra las imágenes dentro del contenedor */
+    margin-top: 1.5rem; /* Espaciado superior respecto al enlace */
+    padding: 0.5rem; /* Espaciado interno opcional */
+}
+
+/* Estilo para cada imagen */
+.images img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho de su contenedor */
+    max-width: 350px; /* Aumenta el tamaño máximo de las imágenes */
+    height: auto; /* Mantiene las proporciones */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto hover en las imágenes */
+.images img:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+}
+
+
+
+
+
+/* Etiqueta de Categoría */
+.project-category {
+    display: inline-block;
+    background-color: #4CAF50; /* Fondo verde */
+    color: white; /* Texto blanco */
+    padding: 0.3rem 1rem; /* Espaciado interno */
+    font-size: 1.2rem; /* Tamaño más pequeño */
+    border-radius: 15px; /* Bordes redondeados */
+    margin-bottom: 1rem; /* Separación con el contenido */
+    font-weight: bold; /* Resalta la etiqueta */
+    text-align: center; /* Centra el texto */
+}
+
+
+
+/* Pie de página */
+/* Estilos para el footer */
+footer {
+    background-color: #4CAF50; /* Fondo verde consistente con el diseño */
+    color: white; /* Texto blanco para contraste */
+    padding: 2rem 1.5rem; /* Espaciado interno */
+    text-align: center; /* Centra todo el contenido */
+    border-top: 3px solid #388E3C; /* Línea decorativa superior */
+}
+
+/* Contenido del footer */
+.footer-content {
+    max-width: 800px; /* Limita el ancho máximo */
+    margin: 0 auto; /* Centra horizontalmente */
+    font-size: 1.4rem; /* Tamaño de texto cómodo */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+/* Lista de enlaces sociales */
+.social-links {
+    display: flex; /* Organiza los enlaces en línea */
+    justify-content: center; /* Centra los enlaces */
+    gap: 1rem; /* Espaciado entre enlaces */
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el relleno */
+    margin: 1rem 0 0; /* Espaciado superior */
+}
+
+/* Estilo de los enlaces */
+.social-links a {
+    color: white; /* Texto blanco */
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 1.4rem; /* Tamaño del texto */
+    border-bottom: 2px solid transparent; /* Línea inferior invisible */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Hover en los enlaces */
+.social-links a:hover {
+    color: #f9f9f9; /* Color más claro */
+    border-bottom: 2px solid white; /* Línea inferior visible */
+}
+
 

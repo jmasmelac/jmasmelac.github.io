@@ -43,13 +43,12 @@ document.addEventListener('DOMContentLoaded', function () {
             projectElement.innerHTML = `
                 <h3>${project.titulo}</h3>
                 <p>${project.descripcion}</p>
-                <a href="${project.repositorio}" target="_blank">Repositorio</a>
+                <a href="${project.repositorio}" target="_blank" class="btn">Repositorio</a>
                 <div class="images">
                     ${project.imagenes
                         ?.map(img => `<img src="${img.trim()}" alt="${project.titulo}" />`)
                         .join('')}
                 </div>
-                <p><strong>Enfoque:</strong> ${project.enfoque}</p>
             `;
             projectContainer.appendChild(projectElement);
         });
